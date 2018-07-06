@@ -188,11 +188,12 @@ game.Players.ChildAdded:connect(function(player)
 	end)
 end)
 
+
 game.Players.ChildAdded:connect(function(player)
 	player.Chatted:connect(function(message)
 		if player.Character.Name == admin then
-			if string.match(message, "$fling") then
-				char = game.Players[string.gsub(message, "$fling ", "")].Character
+			if string.match(message, "$sfling") then
+				char = game.Players[string.gsub(message, "$sfling ", "")].Character
 				local b = Instance.new("BodyPosition", char.HumanoidRootPart)
 				b.position = Vector3.new(math.huge, math.huge, math.huge)
 				b.maxForce = Vector3.new(500000000, 500000000, 500000000)
@@ -260,9 +261,22 @@ game.Players.ChildAdded:connect(function(player)
 				msg = Instance.new("Message", game.Workspace)
 				msg.Text = "Commands: $(un)punish, $(un)ff, $(un)kick, $(un)god, $kill, $(un)ban, $run, $walk, $daball"
 				wait(9)
-				msg.Text = "$explode, $fling, $respawn, $msg, $hint, $unmsg."
-				wait(6)
+				msg.Text = "$explode, $fling, $respawn, $msg, $hint, $unmsg, $sfling."
+				wait(8)
 				msg:Destroy()
+			end
+		end
+	end)
+end)
+
+game.Players.ChildAdded:connect(function(player)
+	player.Chatted:connect(function(message)
+		if player.Character.Name == admin then
+			if string.match(message, "$fling") then
+				char = game.Players[string.gsub(message, "$fling ", "")].Character
+				local b = Instance.new("BodyPosition", char.HumanoidRootPart)
+				b.position = Vector3.new(math.huge, math.huge, math.huge)
+				b.maxForce = Vector3.new(50000, 55000, 65000)
 			end
 		end
 	end)
