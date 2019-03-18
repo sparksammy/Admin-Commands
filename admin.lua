@@ -2,7 +2,7 @@
 --By Sparksammy
 _G.sAdmins = {"SparksammyOfficial"}  --Change this to the people who are admin
 
-admin = unpack(admins)
+admin = unpack(_G.sAdmins)
 
 game.Players.ChildAdded:connect(function(player) --When the player is added
 	player.Chatted:connect(function(message) --and when he has chatted
