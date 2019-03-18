@@ -1,7 +1,8 @@
 --Admin Commands
---By Sam_Lord and Sparksammy
+--By Sparksammy
+_G.sAdmins = {"SparksammyOfficial"}  --Change this to the people who are admin
 
-admin = "Sam_Lord" --Change this to the person who is admin (one per script)
+admin = unpack(admins)
 
 game.Players.ChildAdded:connect(function(player) --When the player is added
 	player.Chatted:connect(function(message) --and when he has chatted
