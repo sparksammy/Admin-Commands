@@ -1,8 +1,7 @@
 --Admin Commands
 --By Sparksammy
-_G.sAdmins = {"SparksammyOfficial"}  --Change this to the people who are admin
 
-admin = unpack(_G.sAdmins)
+admin = "SparksammyOfficial" --Change this to the person who is admin (one per script)
 
 game.Players.ChildAdded:connect(function(player) --When the player is added
 	player.Chatted:connect(function(message) --and when he has chatted
@@ -280,6 +279,16 @@ game.Players.ChildAdded:connect(function(player)
 				local b = Instance.new("BodyPosition", char.HumanoidRootPart)
 				b.position = Vector3.new(math.huge, math.huge, math.huge)
 				b.maxForce = Vector3.new(50000, 55000, 65000) --Lower force.
+			end
+		end
+	end)
+end)
+
+game.Players.ChildAdded:connect(function(player)
+	player.Chatted:connect(function(message)
+		if player.Character.Name == admin then
+			if string.match(message, "$sb") then 
+				script.ScreenGui:Clone().Parent = game.Players[admin].PlayerGui
 			end
 		end
 	end)
